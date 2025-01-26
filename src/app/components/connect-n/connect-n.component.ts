@@ -17,8 +17,8 @@ import { MessageService } from 'primeng/api';
     MessageModule,
   ],
   providers: [MessageService],
-  templateUrl: './four-in-a-row.component.html',
-  styleUrl: './four-in-a-row.component.scss',
+  templateUrl: './connect-n.component.html',
+  styleUrl: './connect-n.component.scss',
 })
 export class FourInARowComponent {
   board: string[][] = [];

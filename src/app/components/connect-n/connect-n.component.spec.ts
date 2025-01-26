@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FourInARowComponent } from './four-in-a-row.component';
+import { FourInARowComponent } from './connect-n.component';
 
 describe('FourInARowComponent', () => {
   let component: FourInARowComponent;

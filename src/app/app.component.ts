@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FourInARowComponent } from './pages/four-in-a-row/four-in-a-row.component';
+import { FourInARowComponent } from './components/connect-n/connect-n.component';
 
 @Component({
   selector: 'app-root',
