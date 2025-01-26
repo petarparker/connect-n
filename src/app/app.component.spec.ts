@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FourInARowComponent } from './pages/four-in-a-row/four-in-a-row.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

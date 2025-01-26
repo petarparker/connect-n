@@ -1,0 +1,32 @@
+<p-panel header="4 in a row" styleClass="game-panel">
+  <div class="board-container">
+    <div class="board">
+      <div *ngFor="let row of board; let rowIndex = index" class="row">
+        <div
+          *ngFor="let cell of row; let colIndex = index"
+          class="cell"
+          [ngClass]="{
+            'red': cell === 'R',
+            'blue': cell === 'B',
+            'white': !cell
+          }"
+          (click)="dropDisc(colIndex)">
+        </div>
+      </div>
+    </div>
+
+  </div>
+    @if(winner){
+      <p class="player-info">Winner: {{ getPlayerAsText(winner) }}</p>
+    }
+    @else {
+      <p class="player-info">Current player: {{ getPlayerAsText(currentPlayer) }}</p>
+    }
+</p-panel>
+
+@if(winner){
+  <div class="info">
+    <p-button label="Reset Game" icon="pi pi-refresh" (click)="resetGame()"></p-button>
+  </div>
+}
+
