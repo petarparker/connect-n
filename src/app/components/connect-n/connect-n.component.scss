@@ -1,56 +1,28 @@
-.game-panel {
-  margin: 20px auto;
-  width: fit-content;
-}
-.board-container {
+.board {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
-.board {
-  display: grid;
-  grid-template-rows: repeat(6, 60px);
-  grid-gap: 5px;
-  background-color: #333;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 10px;
+.board-row {
+  display: flex;
 }
-.row {
-  display: grid;
-  grid-template-columns: repeat(7, 60px);
-  grid-gap: 5px;
-}
-.cell {
-  width: 60px;
-  height: 60px;
-  background-color: white;
-  border-radius: 50%;
+.board-cell {
+  border: 1px solid #ccc;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
+  border-radius: 50%;
 }
-.cell:hover {
-  transform: scale(1.1);
+.red-cell {
+  background-color: rgb(236, 57, 57) !important;
 }
-.red {
-  background-color: #ff9999 !important;
+.blue-cell {
+  background-color: rgb(68, 49, 239) !important;
 }
-.blue {
-  background-color: #99ccff !important;
+.white-cell {
+  background-color: white !important;
 }
-.white {
-  background-color: #f0f0f0 !important;
+.highlight-cell {
+  border: 3px solid rgb(245, 240, 94) !important;
 }
-.info {
-  text-align: center;
-  margin-top: 1rem;
-}
-.player-info {
-  font-size: 1.5rem;
-  text-align: center;
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
-  color: #ded4d4;
-  margin: 10px 0;
+.controls {
+  margin-top: 3px;
 }

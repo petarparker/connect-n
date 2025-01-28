@@ -1,32 +1,47 @@
-<p-panel styleClass="game-panel">
-  <div class="board-container">
-    <div class="board">
-      <div *ngFor="let row of board; let rowIndex = index" class="row">
-        <div
-          *ngFor="let cell of row; let colIndex = index"
-          class="cell"
-          [ngClass]="{
-            'red': cell === 'R',
-            'blue': cell === 'B',
-            'white': !cell
-          }"
-          (click)="dropDisc(colIndex)">
-        </div>
-      </div>
+<p-panel header="Connect-N Game">
+  <div class="board" *ngIf="board.length">
+    <div *ngFor="let row of board; let rowIndex = index" class="board-row">
+      <button
+        *ngFor="let cell of row; let colIndex = index"
+        class="board-cell"
+        [ngClass]="getCellClass(cell, colIndex)"
+        [ngStyle]="{ 'width.px': cellSize, 'height.px': cellSize }"
+        (click)="makeMove(colIndex)"
+        (mouseenter)="highlightColumn(colIndex)"
+        (mouseleave)="clearHighlights()"
+      ></button>
     </div>
-
   </div>
-    @if(winner){
-      <p class="player-info">Winner: {{ getPlayerAsText(winner) }}</p>
+
+  <div [style]="'text-align: center'">
+    <div class="controls mt-2">
+      <button
+        class="mr-1"
+        pButton
+        size="small"
+        type="button-sm"
+        icon="pi pi-search-plus"
+        (click)="zoomIn()"
+      ></button>
+      <button
+        pButton
+        size="small"
+        type="button"
+        icon="pi pi-search-minus"
+        (click)="zoomOut()"
+      ></button>
+    </div>
+    @if(winner != null){
+    <h2>Winner: {{ getPlayerAsString(winner) }}</h2>
+    <button
+      pButton
+      type="button"
+      label="Play Again"
+      (click)="resetGame()"
+    ></button>
+    } @else {
+    <h2>Current Player: {{ getPlayerAsString(currentPlayer) }}</h2>
     }
-    @else {
-      <p class="player-info">Current player: {{ getPlayerAsText(currentPlayer) }}</p>
-    }
+  </div>
 </p-panel>
-
-@if(winner){
-  <div class="info">
-    <p-button label="Reset Game" icon="pi pi-refresh" (click)="resetGame()"></p-button>
-  </div>
-}
-
+<p-toast />

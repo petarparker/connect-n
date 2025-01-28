@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FourInARowComponent } from './connect-n.component';
+import { ConnectNComponent } from './connect-n.component';
 
 describe('FourInARowComponent', () => {
-  let component: FourInARowComponent;
-  let fixture: ComponentFixture<FourInARowComponent>;
+  let component: ConnectNComponent;
+  let fixture: ComponentFixture<ConnectNComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FourInARowComponent]
+      imports: [ConnectNComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FourInARowComponent);
+    fixture = TestBed.createComponent(ConnectNComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
